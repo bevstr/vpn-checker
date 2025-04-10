@@ -17,10 +17,9 @@ You can:
 
 Unlike Mullvad's page — this script doesn’t hide the logic. You know exactly what it’s testing and how. That’s what sovereignty looks like. 🧠🔥
 
----
-
 > Built for use with Mullvad, but useful for any VPN setup.
 
+---
 
 ## ✅ What It Checks
 
@@ -30,6 +29,8 @@ Unlike Mullvad's page — this script doesn’t hide the logic. You know exactly
 - 🚫 Whether known ad/tracking domains (like `doubleclick.com`) are being blocked
 - 🧠 What your system DNS configuration is per interface
 
+---
+
 ## 📦 Requirements
 
 - Bash (default on macOS and Linux)
@@ -38,11 +39,55 @@ Unlike Mullvad's page — this script doesn’t hide the logic. You know exactly
 - `whois`
 - macOS users: `scutil` is already available
 
-## 💻 Usage
+---
 
-1. Clone the repo or download the script:
-   ```bash
-   git clone https://github.com/yourusername/vpn-checker.git
-   cd vpn-checker
-   chmod +x mullvadcheck.sh
+## 💻 Installation
 
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/bevstr/vpn-checker.git
+cd vpn-checker
+```
+
+### 2. Make the script executable
+
+```bash
+chmod +x mullvadcheck.sh
+```
+
+### 3. (Optional) Create an alias for quick access
+
+This lets you run the checker from anywhere using the `vpn` command.
+
+#### For bash users:
+
+```bash
+echo 'alias vpn="$HOME/path/to/vpn-checker/mullvadcheck.sh"' >> ~/.bash_profile
+source ~/.bash_profile
+```
+
+#### For zsh users (macOS default):
+
+```bash
+echo 'alias vpn="$HOME/path/to/vpn-checker/mullvadcheck.sh"' >> ~/.zshrc
+source ~/.zshrc
+```
+
+> 🔁 Replace `/path/to/` with the actual path where you cloned the script, e.g.:  
+> `/Users/yourname/Documents/GitHub/vpn-checker/mullvadcheck.sh`
+
+---
+
+### ✅ Run it!
+
+```bash
+vpn
+```
+
+You'll get a full check of:
+- Your public IP
+- DNS server in use
+- Ad/tracker blocking
+- WHOIS lookup on resolved IPs
+- DNS resolver configuration per interface
